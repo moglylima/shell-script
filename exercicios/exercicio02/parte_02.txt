@@ -1,0 +1,8 @@
+
+#1. A palavra revista, sigular e plural.
+
+#2.Palavra letras em qualquer combinacao.
+
+#3.Numeros inteiros
+
+#4.Um numero IP.
