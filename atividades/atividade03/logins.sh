@@ -3,7 +3,7 @@
 #Linhas linhas que nao sao do sshd
 grep -v 'sshd' /home/compartilhado/auth.log.1
 
-#Logins com SSH (2 comando para o mesmo resultado)
+#Logins com SSH 
 grep -E 'sshd[[[:digit:]]*]:[[:space:]]Accepted' /home/compartilhado/auth.log.1
 
 #Tentativas de Logins via root
