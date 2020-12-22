@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0.
 
 opcao=$1
 nome=$2
