@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 0,8
 
 #Alterando python a ser usado
 #Alterando python globalmente
@@ -7,6 +8,7 @@ sed 's/bin\/python/usr\/bin\/python3/g' /home/compartilhado/atividade04.py
 sed -i '1s/python/python3/' /home/compartilhado/atividade04.py
 
 #Colocando a palavra nota em caixa alta
+# Correção: Não coloca notaFinal em NOTAFINAL
 sed -i 's/nota/NOTA/g' /home/compartilhado/atividade04.py 
 
 #Importando o módulo time
