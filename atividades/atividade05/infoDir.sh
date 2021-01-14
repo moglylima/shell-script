@@ -2,7 +2,7 @@
 
 PARAMETRO=$1
 
-if [ -r ${PARAMETRO} ]
+if [ -d ${PARAMETRO} ]
 then
 	QTDITENS= ls ${PARAMETRO} | wc -l
 	DIRSIZE= du -sk ${PARAMETRO} | cut -f1
