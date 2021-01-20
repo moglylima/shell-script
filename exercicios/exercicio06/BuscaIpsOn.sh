@@ -11,7 +11,7 @@ do
 	ping -c 1 ${SUBREDE}${INCREMENTO} > /dev/null
 	if [ $? -eq 0 ]
 	then
-		echo "${SUBREDE}${INCREMENTO}  " >> ${FILESUBREDE}txt
+		echo "${SUBREDE}${INCREMENTO} on" >> ${FILESUBREDE}txt
 	fi
 done
 
