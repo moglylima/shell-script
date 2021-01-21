@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 PARAMETRO=$1
 DIRSIZE= `du -sk ${PARAMETRO} | cut -f1` 
