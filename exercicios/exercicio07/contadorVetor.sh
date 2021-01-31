@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 0,5
 
 declare -a VETOR
 i=0
@@ -13,3 +14,6 @@ do
 done
 
 printf "Foram inseridos %i numeros\n" "$i"
+
+## vet=(A B C)
+## echo ${#vet[@]}
