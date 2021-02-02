@@ -42,8 +42,7 @@ do
          #Alterando o valor da variável scale, para que se possa realizar operações com ponto flutuante
          #sed ao final visa adição de um zero antes do ponto, em casos onde o resultado < 1
          VISOR="$VISOR $TECLA = `echo "scale=2 ; $VISOR $TECLA" | bc  | sed "s/^[.]/0./"`"
-         echo $VISOR > res
-       
+
 	   fi
          fi
    # se você não digitou um número
