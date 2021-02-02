@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 #Pegando o sinal CTRL+C
 trap "clear; exit" 2
