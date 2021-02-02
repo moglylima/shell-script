@@ -68,7 +68,7 @@ do
 		mensagens_kernel
 		;;
 		3)
-		memoria_virtua
+		memoria_virtual
 		;;
 		4)
 		cpu_nucleo
