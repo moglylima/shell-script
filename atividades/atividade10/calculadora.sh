@@ -38,10 +38,10 @@ do
        else
           # e já existe um número e um operador na tela
           if [[ $VISOR =~ [0-9]+[[:blank:]][*/\+\-] ]]
-	  then
-	     # faça a operação
-	     VISOR="$VISOR $TECLA = `expr $VISOR $TECLA`"
-	  fi
+          then
+             # faça a operação
+             VISOR="$VISOR $TECLA = `expr $VISOR $TECLA`"
+          fi
        fi
    # se você não digitou um número
    else
@@ -54,13 +54,3 @@ do
    fi
 
 done
-
-
-
-
-
-
-
-
-
-
