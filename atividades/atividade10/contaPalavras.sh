@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 echo "Informe o arquivo: "
 read ARQUIVO

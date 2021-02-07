@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 3,0.
 
 TEMPO=$1
 DIRETORIO=$2
