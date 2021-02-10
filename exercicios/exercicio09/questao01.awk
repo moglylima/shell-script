@@ -1,3 +1,4 @@
+#Correção: OK
 BEGIN{
 	print "Alunos no dominio @alu.ufc.br"
 }

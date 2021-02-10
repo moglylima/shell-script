@@ -1,3 +1,4 @@
+#Correção: OK
 
 BEGIN{
 	QTD = 0

@@ -1,3 +1,4 @@
+#Correção: OK
 BEGIN{
 	SOMA = 0
 }
