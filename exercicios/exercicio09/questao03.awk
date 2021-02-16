@@ -3,11 +3,10 @@ BEGIN{
 }
 
 
-/@gmail.com/{ gsub(/@gmail.com/, "@alu.ufc.br"); print }
+/@/{gsub(/@*/, "@alu.ufc.br")
+	print
+}
 
 END{
 	print"OK..."
 }
-
-
-

@@ -1,0 +1,25 @@
+BEGIN{
+	print"Alterando domínio @gmail por @alu"
+}
+
+
+/@gmail.com/{gsub(/@*BEGIN{
+        print"Alterando domínio @gmail por @alu"
+}
+
+
+/@gmail.com/{gsub(/@*/, "@alu.ufc.br")
+        print
+}
+
+END{
+        print"OK..."
+}
+
+/, "@alu.ufc.br")
+	print
+}
+
+END{
+	print"OK..."
+}
