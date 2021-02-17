@@ -10,7 +10,7 @@ BEGIN{
         j = j + 1
     }
     aluno[i] = nome
-    
+ 
     nota = ($NF + $(NF - 1) + $(NF - 2) + $(NF - 3))/4
 
     media[aluno[i]] = nota
