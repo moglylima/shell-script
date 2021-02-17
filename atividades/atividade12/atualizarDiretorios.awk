@@ -3,6 +3,5 @@ BEGIN{
 }
 
 /home\/alunos/{
-    gsub(/home\/alunos/, "home\/alunos")
-    print
+     print
 }

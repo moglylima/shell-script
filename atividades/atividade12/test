@@ -1,0 +1,7 @@
+Iniciando
+Nov 30 00:01:19 programacaoscripts sudo: lucassousa : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/alunos/lucassousa/atividades/atividade01 ; USER=root ; COMMAND=/usr/bin/chmod +x usuarios.sh
+Nov 30 18:43:21 programacaoscripts sudo: publioblenilio : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/alunos/publioblenilio ; USER=root ; COMMAND=/usr/bin/rm -r publioblenilioscripts20202/
+Dec  1 16:22:27 programacaoscripts sudo: franciscolairton : user NOT in sudoers ; TTY=pts/2 ; PWD=/home/alunos/franciscolairton ; USER=root ; COMMAND=/usr/bin/nano usuarios.sh
+Dec  1 16:24:31 programacaoscripts sudo: franciscolairton : user NOT in sudoers ; TTY=pts/2 ; PWD=/home/alunos/franciscolairton ; USER=root ; COMMAND=/usr/bin/nano usuarios.sh
+Dec  2 14:08:00 programacaoscripts sudo: matheusvinicius : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/alunos/matheusvinicius/matheusviniciusscripts20202/atividades/atividade01 ; USER=root ; COMMAND=./usuarios.sh
+Dec  2 21:36:11 programacaoscripts sudo: rafaellima : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/alunos/leticiasaraiva ; USER=root ; COMMAND=/usr/bin/ls
