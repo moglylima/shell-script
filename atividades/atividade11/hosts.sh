@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# OK
 ACAO=""
 HOSTNAME=""
 IP=""
