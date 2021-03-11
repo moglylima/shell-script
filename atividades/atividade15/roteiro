@@ -1,0 +1,21 @@
+
+#---Seviço definiçaõ---#
+
+[Unit]
+After=network.target
+
+[Service]
+ExecStart=/home/ubuntu/mgs_init.sh
+
+[Install]
+WantedBy=default.target
+
+#Local /etc/systemd/system/
+#Permições 644
+
+
+
+
+#---Script serviço test---#
+
+#Permições file.sh 744
