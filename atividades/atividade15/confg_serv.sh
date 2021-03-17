@@ -19,6 +19,8 @@ printf "[Unit]\nAfter=network.target\n[Service]\nExecStart=/usr/local/bin/servic
 
 chmod 664 /etc/systemd/system/relatorio.service
 
+# Em momento algum você habilita ou inicializa o serviço.
+# Portanto, acaba mostrando uma página estática.
 
 #Reinicializando apache2
 systemctl restart apache2

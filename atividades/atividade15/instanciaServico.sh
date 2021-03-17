@@ -26,6 +26,9 @@ IP_PUBLICO=$(aws ec2 describe-instances --query "Reservations[0].Instances[0].Pu
 
 
 #Verificando se o Ip publico já está disponível
+# Certo, é uma verificação válida. Mas tente verificar pelo estado da instância da próxima vez. 
+# Aqui no meu teste o script não retornou no tempo normal. A instância já estava ativa no console e nada a mensagem
+# final aparecer.
 while [ $IP_PUBLICO = "None" ]
 do
 	sleep 10
