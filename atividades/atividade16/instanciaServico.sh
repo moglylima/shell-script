@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Criando Servidor..."
+echo "Criando servidor de Monitoramento em CRON..."
 
 #Chave
 CHAVE=$1
@@ -33,6 +33,8 @@ do
 	STATE=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA --query "Reservations[0].Instances[].State.Name" --output text)
 
 done
+
+echo "Instância em estado running"
 
 #Recuperando IP publico
 IP_PUBLICO=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA --query "Reservations[0].Instances[].PublicIpAddress" --output text)
