@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Instalação apache
+# Use o apt-get
 apt install -y apache2
 
 #Backup index padrão

@@ -1,4 +1,7 @@
 #!/bin/bash
+# ATENÇÃO: mesmo em um repositório privado e sendo uma chave temporária, nunca carrege um 
+# arquivo .pem no GitHub.
+# Correção: 0,8
 echo "Criando servidor de Monitoramento em CRON..."
 
 #Chave
