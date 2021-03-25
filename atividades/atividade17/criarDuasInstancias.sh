@@ -1,4 +1,5 @@
 
+
 #Formato de entrada/saida
 #./criarDuasInstancias.sh nomedachave usuario senha
 #Criando servidor de Banco de Dados...
@@ -70,7 +71,6 @@ do
 done
 
 echo "Servirdor de banco de dados em estado running"
-rm confg_serv.sh
 
 #Recuperando IP publico
 IP_PUBLICO_01=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA_01 --query "Reservations[0].Instances[].PublicIpAddress" --output text)
@@ -91,14 +91,14 @@ apt-get update
 #Instalando cliente mysql
 apt-get install -y mysql-client
 
-#Adicionando arquivos com credenciais
-touch .my.cnf
-echo "[client]" > .my.cnf
-echo "user=$USUARIO" >> .my.cnf
-echo "password=$SENHA" >> .my.cnf
+#Adicionando arquivo com credenciais
+echo "[client]" > ~/.my.cnf
+echo "user=$USUARIO" >> ~/.my.cnf
+echo "password=$SENHA" >> ~/.my.cnf
 
 #Acessando banco
-mysql -u $USUARIO scripts -h $IP_PRIVADO_01<<EOF
+mysql -u $USUARIO -p$SENHA -h $IP_PRIVADO_01<<EOF
+USE scripts;
 CREATE TABLE Teste (atividade INT);
 quit;
 EOF
@@ -131,4 +131,5 @@ IP_PRIVADO_02=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA_02 --quer
 #Mostrando endereço do servidor
 echo "IP Público do Servidor de Aplicação: $IP_PUBLICO_02"
 
-#rm -rf confg_cli.sh confg_serv.sh
+#Removendo arquivos de configuração
+rm -rf confg_cli.sh confg_serv.sh
