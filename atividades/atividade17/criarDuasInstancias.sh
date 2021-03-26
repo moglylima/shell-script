@@ -1,4 +1,4 @@
-
+# Correção: 1,0
 
 #Formato de entrada/saida
 #./criarDuasInstancias.sh nomedachave usuario senha
