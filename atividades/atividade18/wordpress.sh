@@ -121,6 +121,40 @@ systemctl restart apache2
 EOF
 
 
+cat << EOF >> confg_cli.sh
+BD="scripts"
+USER=$USUARIO
+PASSWORD=$SENHA
+HOST=IP_PRIVADO_01
+
+cat<<EOF > /var/www/html/wordpress/wp-config.php
+<?php
+define( 'DB_NAME', '$BD' );
+define( 'DB_USER', '$USER' );
+define( 'DB_PASSWORD', '$PASSWORD' );
+define( 'DB_HOST', '$HOST' );
+define( 'DB_CHARSET', 'utf8' );
+define( 'DB_COLLATE', '' );
+
+$(curl -s https://api.wordpress.org/secret-key/1.1/salt/)
+
+\$table_prefix = 'wp_';
+
+define( 'WP_DEBUG', false );
+
+if ( ! defined( 'ABSPATH' ) ) {
+        define( 'ABSPATH', __DIR__ . '/' );
+}
+
+require_once ABSPATH . 'wp-settings.php';
+EOF
+
+echo "EOF" >> confg_cli.sh
+
+echo "systemctl restart apache2" >> confg_cli.sh
+
+
+
 chmod +x confg_cli.sh
 
 echo "Criando servidor de Aplicação..."
@@ -138,7 +172,6 @@ do
 done
 
 echo "Servirdor de aplicação em estado running"
-rm confg_serv.sh
 
 #Recuperando IP publico
 IP_PUBLICO_02=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA_02 --query "Reservations[0].Instances[].PublicIpAddress" --output text)
