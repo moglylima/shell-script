@@ -153,8 +153,6 @@ echo "EOF" >> confg_cli.sh
 
 echo "systemctl restart apache2" >> confg_cli.sh
 
-
-
 chmod +x confg_cli.sh
 
 echo "Criando servidor de Aplicação..."
@@ -178,7 +176,7 @@ IP_PUBLICO_02=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA_02 --quer
 IP_PRIVADO_02=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA_02 --query "Reservations[0].Instances[].PrivateIpAddress" --output text)
 
 #Mostrando endereço do servidor
-echo "IP Público do Servidor de Aplicação: $IP_PUBLICO_02"
+echo "Acesse http://$IP_PUBLICO_02/wordpress para finalizar a configuração."
 
 #Removendo arquivos de configuração
 #rm -rf confg_cli.sh confg_serv.sh
