@@ -26,7 +26,8 @@ aws ec2 authorize-security-group-ingress --group-id $GRUPO --port 80 --protocol 
 aws ec2 authorize-security-group-ingress --group-id $GRUPO --port 3306 --protocol tcp --source-group $GRUPO
 
 #Criando instancia RDS mysql
-aws rds create-db-instance --db-instance-identifier scripts --engine mysql --master-username $USUARIO --master-user-password $SENHA --allocated-storage 20 --no-publicly-accessible --db-subnet-group-name default-vpc-78d67e05 --vpc-security-group-ids $GRUPO --db-instance-class db.t2.micro
+aws rds create-db-instance --db-instance-identifier scripts --engine mysql --master-username $USUARIO --master-user-password $SENHA --allocated-storage 20 --no-publicly-accessible --db-subnet-group-name default-vpc-78d67e05 --vpc-security-group-ids $GRUPO --db-instance-class db.t2.micro > /dev/null
+ echo "Instancia criada, logo estará acessível..."
 
 #Verificando se a db-instance já está acessível
 STATUS_DB=$(aws rds describe-db-instances --query "DBInstances[].DBInstanceStatus" --output text)
@@ -42,8 +43,6 @@ echo "Endpoint do RDS:  $ENDPOINT_ADDRESS"
 
 
 #Criando Banco scripts
-
-
 #--------------------------------------------------
 #Cliente
 #Gerando arquivo de configuração cliente
@@ -143,4 +142,4 @@ IP_PUBLICO_01=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA_02 --quer
 echo "Acesse http://$IP_PUBLICO_01/wordpress para finalizar a configuração."
 
 #Removendo arquivos de configuração
-#rm -rf confg_cli.sh confg_serv.sh
+rm -rf confg_cli.sh confg_serv.sh
