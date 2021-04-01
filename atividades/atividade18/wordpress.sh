@@ -173,4 +173,4 @@ IP_PRIVADO_02=$(aws ec2 describe-instances --instance-id $ID_INSTANCIA_02 --quer
 echo "Acesse http://$IP_PUBLICO_02/wordpress para finalizar a configuração."
 
 #Removendo arquivos de configuração
-#rm -rf confg_cli.sh confg_serv.sh
+rm -rf confg_cli.sh confg_serv.sh
