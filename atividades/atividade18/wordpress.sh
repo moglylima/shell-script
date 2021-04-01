@@ -130,7 +130,7 @@ define( 'DB_HOST', '$IP_PRIVADO_01' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 \$(curl -s https://api.wordpress.org/secret-key/1.1/salt/)
-----
+--table_prefix = 'wp_';
 define( 'WP_DEBUG', false );
 if ( ! defined( 'ABSPATH' ) ) {
 }
@@ -139,10 +139,8 @@ EOF1
 EOF
 
 
-
-
 cat << EOF >> confg_cli.sh
-sed -i "s/----/\$table_prefix = 'wp_';/g" /var/www/html/wordpress/wp-config.php
+sed -i "s/--/\$/g" /var/www/html/wordpress/wp-config.php
 chown -R www-data:www-data /var/www/html/wordpress
 find /var/www/html/wordpress/ -type d -exec chmod 750 {} \;
 find /var/www/html/wordpress/ -type f -exec chmod 640 {} \;
