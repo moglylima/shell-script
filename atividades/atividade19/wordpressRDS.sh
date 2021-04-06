@@ -20,13 +20,15 @@ SUBRED_ID=$(aws ec2 describe-subnets --query "Subnets[0].SubnetId" --output text
 #Criando grupo de segurança
 GRUPO=$(aws ec2 create-security-group --group-name "scripts" --description "scriptsRDS" --output text)
 
+SUBNET_GROUP_NAME=$(aws rds describe-db-subnet-groups --query "DBSubnetGroups[].DBSubnetGroupName" --output text)
+
 #Definindo politicas do grupo(Liberando portas 22,80 e 3306)
 aws ec2 authorize-security-group-ingress --group-id $GRUPO --port 22 --protocol tcp  --cidr $IP_ORIGEM/32
 aws ec2 authorize-security-group-ingress --group-id $GRUPO --port 80 --protocol tcp  --cidr 0.0.0.0/0
 aws ec2 authorize-security-group-ingress --group-id $GRUPO --port 3306 --protocol tcp --source-group $GRUPO
 
 #Criando instancia RDS mysql
-aws rds create-db-instance --db-instance-identifier scripts --engine mysql --master-username $USUARIO --master-user-password $SENHA --allocated-storage 20 --no-publicly-accessible --db-subnet-group-name default-vpc-78d67e05 --vpc-security-group-ids $GRUPO --db-instance-class db.t2.micro > /dev/null
+aws rds create-db-instance --db-instance-identifier scripts --engine mysql --master-username $USUARIO --master-user-password $SENHA --allocated-storage 20 --no-publicly-accessible --db-subnet-group-name $SUBNET_GROUP_NAME --vpc-security-group-ids $GRUPO --db-instance-class db.t2.micro > /dev/null
  echo "Instancia criada, logo estará acessível..."
 
 #Verificando se a db-instance já está acessível
