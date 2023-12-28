@@ -1,4 +1,3 @@
-
 #!/bin/bash
 echo "Criando  instância de Banco de Dados no RDS..."
 

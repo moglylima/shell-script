@@ -1,5 +1,4 @@
 #!/bin/bash
-# Correção: 0,5
 
 arquivo=$1
 

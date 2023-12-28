@@ -1,9 +1,9 @@
 #!/bin/bash
-# Correção: 0,8
 
 #Alterando python a ser usado
 #Alterando python globalmente
 sed 's/bin\/python/usr\/bin\/python3/g' /home/compartilhado/atividade04.py
+
 #Alterando python apenas na primeira linha do arquivo
 sed -i '1s/python/python3/' /home/compartilhado/atividade04.py
 

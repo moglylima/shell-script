@@ -1,5 +1,4 @@
 #!/bin/bash
-# Correção: 0,3
 
 grep -E '[[:space:]]A' /home/compartilhado/emailsordenados.txt
 

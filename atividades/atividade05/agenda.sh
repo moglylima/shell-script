@@ -1,5 +1,4 @@
 #!/bin/bash
-# Correção: 1,0
 
 opcao=$1
 nome_add_remove=$2

@@ -1,6 +1,5 @@
 
 #!/bin/bash
-# Correção: 2,5
 echo "Criando servidor de Banco de Dados..."
 
 #Parametros recebidos

@@ -1,5 +1,4 @@
 #!/bin/bash
-# Correção: 1,0
 
 #Linhas linhas que nao sao do sshd
 grep -v 'sshd' /home/compartilhado/auth.log.1
